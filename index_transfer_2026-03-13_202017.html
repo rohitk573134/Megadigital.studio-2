@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Digital Studio | Premium Photography | Port Blair, Andaman</title>
+    <meta name="description" content="Luxury cinematic photography studio in Port Blair, Andaman & Nicobar Islands. Premium Wedding, Drone, Portrait & Event Photography.">
+    <meta name="keywords" content="photography, wedding photography, drone photography, portrait, Port Blair, Andaman, cinematic">
+    <meta name="author" content="Mega Digital Studio">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='none' stroke='%23D4AF37' stroke-width='4'/><circle cx='50' cy='50' r='15' fill='%23D4AF37'/></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-lens">
+            <div class="preloader-lens-outer"></div>
+            <div class="preloader-lens-middle"></div>
+            <div class="preloader-lens-inner"></div>
+            <div class="preloader-lens-shine"></div>
+        </div>
+        <div class="preloader-text">Mega <span>Digital</span></div>
+        <div class="preloader-tagline">Premium Photography Studio</div>
+        <div class="preloader-progress">
+            <div class="preloader-progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="preloader-percent" id="preloader-percent">0%</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="navbar-logo">
+            <div class="logo-icon"></div>
+            <span class="logo-text">Mega <span>Digital</span></span>
+        </a>
+        
+        <ul class="navbar-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        
+        <button class="navbar-cta">Book Now</button>
+        
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="parallax-layer parallax-layer-1" id="parallax-1"></div>
+            <div class="parallax-layer parallax-layer-2"></div>
+            <div class="parallax-layer parallax-layer-3"></div>
+        </div>
+        
+        <div class="particles-container" id="particles"></div>
+        
+        <canvas id="hero-canvas"></canvas>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <div class="hero-badge-dot"></div>
+                <span class="hero-badge-text">Premium Photography Experience</span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="hero-title-line">Capturing Stories</span>
+                <span class="hero-title-line">From <span>Sky</span> To <span>Soul</span></span>
+            </h1>
+            
+            <div class="hero-services">
+                <span class="hero-service-item">Wedding</span>
+                <span class="hero-service-item">Drone</span>
+                <span class="hero-service-item">Portrait</span>
+                <span class="hero-service-item">Events</span>
+            </div>
+            
+            <p class="hero-location">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Port Blair, Andaman & Nicobar Islands
+            </p>
+            
+            <div class="hero-cta-group">
+                <button class="btn-primary">View Portfolio</button>
+                <button class="btn-secondary">Book Your Shoot</button>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Scroll Story Experience -->
+    <section class="scroll-story">
+        <!-- Story 1 - Sky -->
+        <div class="story-section story-sky" id="story-sky">
+            <div class="story-bg"></div>
+            <div class="story-overlay"></div>
+            <div class="story-content">
+                <span class="story-number">01</span>
+                <p class="story-label">The Journey Begins</p>
+                <h2 class="story-title">From The Sky</h2>
+                <p class="story-description">
+                    We capture the magnificent beauty of Andaman from above. Professional drone cinematography that reveals breathtaking perspectives.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Story 2 - Lens -->
+        <div class="story-section story-lens">
+            <div class="story-bg"></div>
+            <div class="story-overlay"></div>
+            <div class="story-content">
+                <span class="story-number">02</span>
+                <p class="story-label">Through Our Eyes</p>
+                <h2 class="story-title">Through The Lens</h2>
+                <p class="story-description">
+                    Every frame is crafted with precision and artistic vision. Professional equipment, cinematic techniques, and timeless results.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Story 3 - Emotions -->
+        <div class="story-section story-emotions">
+            <div class="story-bg"></div>
+            <div class="story-overlay"></div>
+            <div class="story-content">
+                <span class="story-number">03</span>
+                <p class="story-label">Portraits That Speak</p>
+                <h2 class="story-title">Into Human Emotion</h2>
+                <p class="story-description">
+                    We capture the essence of who you are. Authentic expressions, real emotions, and beautiful memories.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Story 4 - Stories -->
+        <div class="story-section story-stories">
+            <div class="story-bg"></div>
+            <div class="story-overlay"></div>
+            <div class="story-content">
+                <span class="story-number">04</span>
+                <p class="story-label">Your Special Day</p>
+                <h2 class="story-title">Your Story Unfolds</h2>
+                <p class="story-description">
+                    Weddings, celebrations, milestones – every moment matters. We transform your precious moments into cinematic memories.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <p class="section-label">Our Expertise</p>
+            <h2 class="section-title">Premium <span>Services</span></h2>
+        </div>
+        
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" alt="Wedding Photography" class="service-image" loading="lazy">
+                <div class="service-overlay"></div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+                    </div>
+                    <h3 class="service-title">Wedding Photography</h3>
+                    <p class="service-description">Luxury cinematic wedding storytelling. We capture every precious moment of your special day.</p>
+                </div>
+                <div class="service-arrow">
+                    <svg viewBox="0 0 24 24"><path d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+                </div>
+            </div>
+            
+            <!-- Service 2 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?w=800&q=80" alt="Drone Photography" class="service-image" loading="lazy">
+                <div class="service-overlay"></div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+                    </div>
+                    <h3 class="service-title">Drone & Aerial</h3>
+                    <p class="service-description">Professional drone coverage with cinematic aerial shots of Andaman's beauty.</p>
+                </div>
+                <div class="service-arrow">
+                    <svg viewBox="0 0 24 24"><path d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+                </div>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="Event Coverage" class="service-image" loading="lazy">
+                <div class="service-overlay"></div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"/></svg>
+                    </div>
+                    <h3 class="service-title">Event Coverage</h3>
+                    <p class="service-description">Corporate events, celebrations, concerts. Professional documentation of your gatherings.</p>
+                </div>
+                <div class="service-arrow">
+                    <svg viewBox="0 0 24 24"><path d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+                </div>
+            </div>
+            
+            <!-- Service 4 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80" alt="Portrait Photography" class="service-image" loading="lazy">
+                <div class="service-overlay"></div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+                    </div>
+                    <h3 class="service-title">Portrait & Fashion</h3>
+                    <p class="service-description">Studio portraits, fashion shoots. Showcase your personality with stunning imagery.</p>
+                </div>
+                <div class="service-arrow">
+                    <svg viewBox="0 0 24 24"><path d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+                </div>
+            </div>
+            
+            <!-- Service 5 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1544126592-807ade215a0b?w=800&q=80" alt="Maternity Photography" class="service-image" loading="lazy">
+                <div class="service-overlay"></div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="service-title">Maternity & Newborn</h3>
+                    <p class="service-description">Beautiful maternal and newborn photography. Capture your family story.</p>
+                </div>
+                <div class="service-arrow">
+                    <svg viewBox="0 0 24 24"><path d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+                </div>
+            </div>
+            
+            <!-- Service 6 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80" alt="Commercial Photography" class="service-image" loading="lazy">
+                <div class="service-overlay"></div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+                    </div>
+                    <h3 class="service-title">Commercial</h3>
+                    <p class="service-description">Product photography and brand shoots. Elevate your business.</p>
+                </div>
+                <div class="service-arrow">
+                    <svg viewBox="0 0 24 24"><path d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-header">
+            <p class="section-label">Our Work</p>
+            <h2 class="section-title">Featured <span>Portfolio</span></h2>
+        </div>
+        
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="wedding">Wedding</button>
+            <button class="filter-btn" data-filter="drone">Drone</button>
+            <button class="filter-btn" data-filter="portrait">Portrait</button>
+            <button class="filter-btn" data-filter="events">Events</button>
+        </div>
+        
+        <div class="portfolio-grid" id="portfolio-grid">
+            <div class="portfolio-item" data-category="wedding">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" alt="Wedding" loading="lazy">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Wedding</span>
+                    <h4 class="portfolio-title">Beachside Romance</h4>
+                </div>
+                <div class="portfolio-zoom">
+                    <svg viewBox="0 0 24 24"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="drone">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="Drone" loading="lazy">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Drone</span>
+                    <h4 class="portfolio-title">Andaman Aerials</h4>
+                </div>
+                <div class="portfolio-zoom">
+                    <svg viewBox="0 0 24 24"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="portrait">
+                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80" alt="Portrait" loading="lazy">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Portrait</span>
+                    <h4 class="portfolio-title">Natural Beauty</h4>
+                </div>
+                <div class="portfolio-zoom">
+                    <svg viewBox="0 0 24 24"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="wedding">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80" alt="Wedding" loading="lazy">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Wedding</span>
+                    <h4 class="portfolio-title">Golden Hour</h4>
+                </div>
+                <div class="portfolio-zoom">
+                    <svg viewBox="0 0 24 24"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="events">
+                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="Events" loading="lazy">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Events</span>
+                    <h4 class="portfolio-title">Corporate Gala</h4>
+                </div>
+                <div class="portfolio-zoom">
+                    <svg viewBox="0 0 24 24"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="drone">
+                <img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?w=800&q=80" alt="Drone" loading="lazy">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Drone</span>
+                    <h4 class="portfolio-title">Island Paradise</h4>
+                </div>
+                <div class="portfolio-zoom">
+                    <svg viewBox="0 0 24 24"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="portrait">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Portrait" loading="lazy">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Portrait</span>
+                    <h4 class="portfolio-title">Studio Session</h4>
+                </div>
+                <div class="portfolio-zoom">
+                    <svg viewBox="0 0 24 24"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="wedding">
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80" alt="Wedding" loading="lazy">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Wedding</span>
+                    <h4 class="portfolio-title">Eternal Vows</h4>
+                </div>
+                <div class="portfolio-zoom">
+                    <svg viewBox="0 0 24 24"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close">
+            <svg viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="Portfolio Image" id="lightbox-img">
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-bg"></div>
+        
+        <div class="section-header">
+            <p class="section-label">Client Love</p>
+            <h2 class="section-title">What People <span>Say</span></h2>
+        </div>
+        
+        <div class="testimonials-container">
+            <div class="testimonials-carousel">
+                <div class="testimonial-card active">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        Amazing photography! Wedding photos bilkul cinematic movie jaisa feel dete hain. Har moment itna beautifully capture kiya hai!
+                    </p>
+                    <div class="testimonial-author">
+                        <span class="author-name">— Rohan & Priya</span>
+                        <span class="author-location">Wedding, Port Blair</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        Drone shots toh next level the! Pure Andaman ka beauty capture kiya. Highly recommended!
+                    </p>
+                    <div class="testimonial-author">
+                        <span class="author-name">— Aman Singh</span>
+                        <span class="author-location">Tourism Project</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        Portrait shoot experience bahut professional tha. Photos came out absolutely stunning!
+                    </p>
+                    <div class="testimonial-author">
+                        <span class="author-name">— Neha Sharma</span>
+                        <span class="author-location">Portrait Session</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        Best decision! Professional work, on-time delivery, world-class quality!
+                    </p>
+                    <div class="testimonial-author">
+                        <span class="author-name">— Andaman Resorts</span>
+                        <span class="author-location">Commercial Project</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonials-nav">
+                <button class="testimonial-nav-btn" id="prev-testimonial">
+                    <svg viewBox="0 0 24 24"><path d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+                </button>
+                <button class="testimonial-nav-btn" id="next-testimonial">
+                    <svg viewBox="0 0 24 24"><path d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+                </button>
+            </div>
+            
+            <div class="testimonials-dots" id="testimonials-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-bg"></div>
+        <div class="cta-glow"></div>
+        
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to Capture <span>Your Story?</span></h2>
+            <p class="cta-description">
+                Let's create something extraordinary together. Book your premium photography 
+                experience with Mega Digital Studio today.
+            </p>
+            <div class="cta-buttons">
+                <button class="btn-gold">Book Now</button>
+                <button class="btn-whatsapp">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Chat on WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon"></div>
+                    <span class="footer-logo-text">Mega <span>Digital</span></span>
+                </div>
+                <p class="footer-description">
+                    Premium photography studio specializing in cinematic wedding, drone, and portrait photography.
+                </p>
+                <p class="footer-location">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                    Port Blair, Andaman & Nicobar Islands
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Wedding Photography</a></li>
+                    <li><a href="#services">Drone & Aerial</a></li>
+                    <li><a href="#services">Portrait & Fashion</a></li>
+                    <li><a href="#services">Event Coverage</a></li>
+                    <li><a href="#services">Commercial</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                    <li><a href="mailto:hello@megadigital.in">hello@megadigital.in</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2025 Mega Digital Studio. All rights reserved.</p>
+            <p class="footer-credit">Crafted with ❤️ in <a href="#">Andaman</a></p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <span class="whatsapp-tooltip">Chat with us!</span>
+        <button class="whatsapp-btn">
+            <svg viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/three-scene.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
